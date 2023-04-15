@@ -1,0 +1,12 @@
+.task {
+	display: grid;
+	grid-template-columns: 14fr 1fr 1fr;
+	background-color: white;
+	border-radius: 5px;
+	margin: 1rem 3rem; 
+	padding: 1rem;
+}
+
+.task li {
+	text-align: left; 
+}

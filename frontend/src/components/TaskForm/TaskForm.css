@@ -32,3 +32,7 @@ form button {
 	color: red; 
 	margin: 1rem; 
 }
+
+ul {
+	list-style: none; 
+}

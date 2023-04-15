@@ -1,6 +1,7 @@
 import axios from 'axios';
 import {useState, useEffect} from 'react';
 import './TaskForm.css';
+import Task from '../Task/Task';
 
 const TaskForm = () => {
 	const [name, setName] = useState('');
@@ -50,10 +51,7 @@ const TaskForm = () => {
 		{tasks.length === 0 ? <p className='no-tasks'> No Tasks In Your List</p> : tasks.map(function (task) {
 			return (
 				<ul>
-					<li key={task._id}>
-						<p>{task.name}</p>
-						<p>{task.completed}</p>
-					</li>
+					<Task key={task._id} name={task.name} completed={task.completed}/>
 				</ul>
 			);
 		}) }
