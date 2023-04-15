@@ -1,7 +1,3 @@
-// routes contain the endpoints for the application 
-// controllers contain the implementation code for the endpoints
-// models defines data structure and responds to controller requests because controller never interacts with the database 
-
 
 const Task = require('../models/Task');
 
@@ -15,8 +11,6 @@ const getAllTasks = async function (req, res) {
 }
 
 const createTask = async function (req, res) {
-	// an instance of a model is a document 
-	// creates a document 
 	try {
 		const task = await Task.create(req.body)
 		res.status(201).json({ task })

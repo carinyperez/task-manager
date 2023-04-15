@@ -1,21 +1,23 @@
 {
-  "name": "jobs",
+  "name": "task-manager",
   "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
+  "description": "An application to help organize and complete your tasks for the day",
+  "main": "server.js",
   "scripts": {
-    "start": "nodemon app.js",
-    "postinstall": "npm run webpack",
-    "webpack": "webpack"
+    "start": "nodemon backend/server.js",
+    "server": "nodemon backend/server.js",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "keywords": [],
-  "author": "",
+  "author": "Cariny Perez",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.3.5",
+    "concurrently": "^8.0.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "mongoose": "^5.13.16",
-    "webpack": "^5.79.0"
+    "mongoose": "^5.13.16"
   },
   "devDependencies": {
     "nodemon": "^2.0.7"
