@@ -1,5 +1,6 @@
 import axios from 'axios';
 import {useState, useEffect} from 'react';
+import './TaskForm.css';
 
 const TaskForm = () => {
 	const [name, setName] = useState('');
@@ -17,7 +18,7 @@ const TaskForm = () => {
 			const {tasks } = getTasks.data; 
 			setTasks(tasks);
 		} catch (error) {
-			setError(error);
+			setError(error.message);
 		}
 	}
 
@@ -25,17 +26,20 @@ const TaskForm = () => {
 		event.preventDefault();
 		axios.post('/api/v1/tasks', {name})
 		getTasks();
+		setName('');
 	}
 	return (
 		<>
+		{error && <p className='error'>{error}</p>}
 		<section>
-			<form onSubmit={handleSubmit}>
-				<h4>Task Manager</h4>
+			<form onSubmit={handleSubmit} className='task-form'>
+				<h2>Task Manager</h2>
 				<input
 					type='text'
 					name='task-name'
 					className='task-input'
 					placeholder='e.g wash dishes'
+					value={name}
 					onChange={function (event) {
 						setName(event.target.value);
 					} } />
@@ -43,8 +47,7 @@ const TaskForm = () => {
 			</form>
 		</section>
 		<section>
-		{error && <p>{error}</p>}
-		{tasks.length === 0 ? <p> No tasks in your list</p> : tasks.map(function (task) {
+		{tasks.length === 0 ? <p className='no-tasks'> No Tasks In Your List</p> : tasks.map(function (task) {
 			return (
 				<ul>
 					<li key={task._id}>

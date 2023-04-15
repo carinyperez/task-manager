@@ -1,11 +1,9 @@
-import TaskForm from '../components/TaskForm';
+import TaskForm from '../components/TaskForm/TaskForm';
 
 const HomePage = () => {
 	return (
 		<>
-		<section>
 			<TaskForm />
-		</section>
 		</>
 	)
 }
