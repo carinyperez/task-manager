@@ -4,10 +4,7 @@
   "description": "An application to help organize and complete your tasks for the day",
   "main": "server.js",
   "scripts": {
-    "start": "node backend/server.js",
-    "server": "node backend/server.js",
-    "client": "npm start --prefix frontend",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "Cariny Perez",
