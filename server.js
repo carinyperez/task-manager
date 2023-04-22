@@ -7,6 +7,7 @@ const tasks = require('./routes/tasks');
 require('dotenv').config();
 const url = process.env.MONGO_URI; 
 const notFound = require('./middleware/not-found');
+const path = require('path');
 
 const start = async function() {
 	try {
@@ -23,7 +24,7 @@ const start = async function() {
 start();
 
 // middleware 
-app.use(express.static('public'));
+app.use(express.static('frontend/build'));
 app.use(express.json())
 
 
@@ -31,14 +32,13 @@ app.get('/hello', function(req, res) {
 	res.status(200).json({msg: 'Task manager app'})
 })
 
-// app.get('/*', function(req, res) {
-// 	res.sendFile('./frontend/build', 'index.html')
-// })
-
-
-
 // middleware for routes 
 app.use('/api/v1/tasks', tasks);
+
+app.get('/*', function(req, res) {
+	res.sendFile(path.join(__dirname, 'frontend/build', 'index.html'))
+})
+
 app.use(notFound)
 
 

@@ -4,7 +4,7 @@ const NotFound = () => {
 	return (
 		<div>
 			<h1>404 - Not Found</h1>
-			<Link to='/'>Back To Tasks</Link>
+			<Link to='/tasks'>Back To Tasks</Link>
 		</div>
 	)
 }

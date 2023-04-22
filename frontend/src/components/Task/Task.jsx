@@ -14,7 +14,7 @@ const Task = ({id, name, completed, handleDelete}) => {
 	}
 
 	const handleEdit = () => {
-		navigate(`/task/${id}`)
+		navigate(`task/${id}`)
 	}
 
 	return (

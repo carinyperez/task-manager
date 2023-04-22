@@ -49,7 +49,7 @@ const EditTask = () => {
 	}
 
 	const handleClick = () => {
-		navigate('/')
+		navigate('/tasks')
 	}
 	return (
 		<>
