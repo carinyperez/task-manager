@@ -4,7 +4,7 @@
   "description": "An application to help organize and complete your tasks for the day",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "nodemon server.js"
   },
   "keywords": [],
   "author": "Cariny Perez",

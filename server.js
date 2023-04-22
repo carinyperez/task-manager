@@ -23,7 +23,7 @@ const start = async function() {
 start();
 
 // middleware 
-app.use(express.static('./frontend/public'));
+app.use(express.static('public'));
 app.use(express.json())
 
 
@@ -31,9 +31,9 @@ app.get('/hello', function(req, res) {
 	res.status(200).json({msg: 'Task manager app'})
 })
 
-app.get('/*', function(req, res) {
-	res.sendFile('./frontend/build', 'index.html')
-})
+// app.get('/*', function(req, res) {
+// 	res.sendFile('./frontend/build', 'index.html')
+// })
 
 
 
