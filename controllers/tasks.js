@@ -48,6 +48,7 @@ const updateTask = async function (req, res) {
 
 const deleteTask = async function (req, res) {
 	const { id } = req.params;
+	console.o
 	try {
 		const task = await Task.findOneAndDelete({ _id: id })
 		if (!task) {

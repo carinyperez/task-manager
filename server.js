@@ -6,6 +6,7 @@ const app = express();
 const tasks = require('./routes/tasks');
 require('dotenv').config();
 const url = process.env.MONGO_URI; 
+const notFound = require('./middleware/not-found');
 
 const start = async function() {
 	try {
@@ -31,6 +32,7 @@ app.get('/hello', function(req, res) {
 
 // middleware for routes 
 app.use('/api/v1/tasks', tasks);
+app.use(notFound)
 
 
 
