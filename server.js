@@ -22,7 +22,7 @@ const start = async function() {
 
 start();
 
-app.use(express.static('./public'));
+app.use(express.static('./frontend/public'));
 app.use(express.json())
 
 

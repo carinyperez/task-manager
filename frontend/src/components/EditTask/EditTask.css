@@ -1,0 +1,28 @@
+form {
+	background-color: white; 
+	display: flex; 
+	flex-direction: column;
+	margin: 2rem; 
+	padding: 1rem;
+	line-height: 3rem;  
+}
+
+form section {
+	display: flex;
+	justify-content: space-between; 
+	align-items: center; 
+}
+
+
+.error {
+	color: red; 
+}
+
+.back-to-tasks {
+	color: white; 
+	background-color: black;
+	border-radius: 0.5rem; 
+	padding: 1rem; 
+	width: 70vw; 
+	margin-top: 1rem; 
+}
