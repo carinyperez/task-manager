@@ -28,10 +28,6 @@ app.use(express.static('frontend/build'));
 app.use(express.json())
 
 
-app.get('/hello', function(req, res) {
-	res.status(200).json({msg: 'Task manager app'})
-})
-
 // middleware for routes 
 app.use('/api/v1/tasks', tasks);
 
